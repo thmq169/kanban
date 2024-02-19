@@ -15,21 +15,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.get("/", (req, res) => res.send("Hi!, welcome to kanban api"));
-
-app.use((req, res, next) => {
-  // const allowedOrigins = ['http://127.0.0.1:8020', 'http://localhost:8020', 'http://127.0.0.1:9000', 'http://localhost:9000'];
-  // const origin = req.headers.origin;
-  // if (allowedOrigins.includes(origin)) {
-  //      res.setHeader('Access-Control-Allow-Origin', origin);
-  // }
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "*");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", true);
-  return next();
-});
+app.use(function(req, res, next) {
+            res.header("Access-Control-Allow-Origin", "http://localhost:5173/"); // update to match the domain you will make the request from
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+            next();
+          });
+        app.get("/", (req, res) => res.send("Hi!, welcome to kanban api"));
 
 app.use("/api/v1", indexRouter);
 
