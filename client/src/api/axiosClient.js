@@ -14,7 +14,7 @@ axiosClient.interceptors.request.use((config) => {
     ...config,
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${getToken()}`,
+      Authorization: `Bearer ${getToken()}`,
     },
   };
 });
@@ -26,7 +26,7 @@ axiosClient.interceptors.response.use(
   },
   (err) => {
     if (!err.response) {
-      return alert(err);
+      return alert(err.message);
     }
 
     throw err.response;
