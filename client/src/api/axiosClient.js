@@ -1,7 +1,7 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const backendUrl = "https://kanban-api-kappa.vercel.app/api/v1/";
+const backendUrl = "https://kanban-api-thmq169.vercel.app/api/v1/";
 const getToken = () => localStorage.getItem("token");
 
 const axiosClient = axios.create({
@@ -26,7 +26,7 @@ axiosClient.interceptors.response.use(
   },
   (err) => {
     if (!err.response) {
-      return alert(err.message);
+      return alert(err);
     }
 
     throw err.response;

@@ -22,7 +22,7 @@ const FavoriteList = () => {
                 dispatch(favoriteSlice.actions.setFavoritesList(res))
 
             } catch (error) {
-                alert(error.data)
+                console.log(error.data)
             }
         }
         getBoards()
@@ -45,7 +45,7 @@ const FavoriteList = () => {
         try {
             await boardApi.updateFavoritePosition({ boards: newList })
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 

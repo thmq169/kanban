@@ -65,7 +65,7 @@ const TaskModel = (props) => {
             props.onDelete(task)
             setTask(undefined)
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 
@@ -76,7 +76,7 @@ const TaskModel = (props) => {
             try {
                 await taskApi.update(boardId, task._id, { title: newTitle })
             } catch (error) {
-                alert(error.data)
+                console.log(error.data)
             }
         }, timeout)
         task.title = newTitle
@@ -94,7 +94,7 @@ const TaskModel = (props) => {
                 try {
                     await taskApi.update(boardId, task._id, { content: data })
                 } catch (error) {
-                    alert(error.data)
+                    console.log(error.data)
                 }
             }, timeout)
             task.content = data

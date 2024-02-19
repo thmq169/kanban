@@ -39,7 +39,7 @@ const Board = () => {
                 setIcon(res.icon)
             } catch (error) {
 
-                alert(error.data)
+                console.log(error.data)
             }
         }
 
@@ -66,7 +66,7 @@ const Board = () => {
         try {
             await boardApi.update(boardId, { icon: newIcon })
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 
@@ -91,7 +91,7 @@ const Board = () => {
             try {
                 await boardApi.update(boardId, { title: newTitle })
             } catch (error) {
-                alert(error.data)
+                console.log(error.data)
             }
         }, timeout)
     }
@@ -108,7 +108,7 @@ const Board = () => {
             try {
                 await boardApi.update(boardId, { description: newDescription })
             } catch (error) {
-                alert(error.data)
+                console.log(error.data)
             }
         }, timeout)
     }
@@ -127,7 +127,7 @@ const Board = () => {
 
             setIsFavorite(!isFavorite)
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 
@@ -152,7 +152,7 @@ const Board = () => {
             dispatch(boardSlice.actions.setBoard(newList))
 
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 

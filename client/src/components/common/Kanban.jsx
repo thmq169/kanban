@@ -58,7 +58,7 @@ const Kanban = (props) => {
             })
             setData(data)
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
 
     }
@@ -68,7 +68,7 @@ const Kanban = (props) => {
             const section = await sectionApi.create(boardId)
             setData([...data, section])
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 
@@ -78,7 +78,7 @@ const Kanban = (props) => {
             const newData = [...data].filter(e => e._id !== sectionId)
             setData(newData)
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 
@@ -93,7 +93,7 @@ const Kanban = (props) => {
             try {
                 await sectionApi.update(boardId, sectionId, { title: newTitle })
             } catch (error) {
-                alert(error.data)
+                console.log(error.data)
             }
         }, timeout)
     }
@@ -106,7 +106,7 @@ const Kanban = (props) => {
             newData[index].tasks.unshift(task)
             setData(newData)
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 

@@ -1,15 +1,14 @@
 {
   "builds": [
     {
-      "src": "bin/www.js",
+      "src": "bin/www",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "bin/www.js",
-      "methods": ["GET", "POST", "PATCH", "DELETE", "OPTIONS"]
+      "dest": "bin/www"
     }
   ]
 }

@@ -21,7 +21,7 @@ const Home = () => {
             console.log(res);
             navigate(`/boards/${res._id}`)
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
         finally {
             setLoading(false)

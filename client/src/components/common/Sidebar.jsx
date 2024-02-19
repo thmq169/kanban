@@ -29,7 +29,7 @@ const Sidebar = () => {
                 dispatch(boardSlice.actions.setBoard(res))
 
             } catch (error) {
-                alert(error.data)
+                console.log(error.data)
             }
         }
         getBoards()
@@ -60,7 +60,7 @@ const Sidebar = () => {
         try {
             await boardApi.updatePosition({ boards: newList })
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 
@@ -73,7 +73,7 @@ const Sidebar = () => {
             navigate(`/boards/${res._id}`)
 
         } catch (error) {
-            alert(error.data)
+            console.log(error.data)
         }
     }
 
